@@ -42,7 +42,7 @@ A partir de este punto trabajarás sobre **tu fork**, no sobre el repositorio or
 Copia la URL de **tu fork** (no la del repositorio original) y ejecuta:
 
 ```bash
-git clone https://github.com/TU_USUARIO/POO1_Workshop.git
+git clone https://github.com/TU_USUARIO/POO1_Workshop.git .
 cd POO1_Workshop
 ```
 
