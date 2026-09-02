@@ -36,7 +36,7 @@ public class Workshop {
 		tabla[i - 1] = numero*1;
         return new int[0];
 	}
-	return tabla,
+	return tabla;
     }
 
     // Método que calcula el factorial de un número entero
