@@ -44,7 +44,15 @@ public class Workshop {
         // TODO: Implementar el método para calcular el factorial de un número entero.
         // Ejemplo: Si n = 5, el resultado debería ser 120.
         // Lanzar IllegalArgumentException si n es negativo.
-        return 0;
+	// Primero imposibilitamos la opcion de poder poner n como numero negativo
+	if (n < 0) {
+        throw new IllegalArgumentException("El número debe ser mayor o igual a cero.");
+    }
+	int resultado = 1;
+	for (int i = 2; i <= n; i++) {
+        resultado *= i;
+    }
+        return resultado;
     }
 
     // Método que verifica si un número es primo
