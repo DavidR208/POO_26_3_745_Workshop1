@@ -168,7 +168,16 @@ public class Workshop {
     public boolean buscarElemento(int[] arreglo, int elemento) {
         // TODO: Implementar el método para buscar un elemento en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y elemento = 3, el resultado debería ser true.
-        return false;
+	if (arreglo == null) {
+        	return false;
+    	}
+	for (int numero : arreglo) {
+		// Si se encuentra el elemento se hace directamente el true
+		if (numero == elemento) {
+            		return true;
+		}
+	}
+        return False; // Si termina el bucle y no encontro el elemento 
     }
 
     // Método que invierte un arreglo
