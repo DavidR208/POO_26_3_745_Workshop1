@@ -369,7 +369,26 @@ public class Workshop {
     public int contarPalabras(String cadena) {
         // TODO: Implementar el método para contar el número de palabras en una cadena.
         // Ejemplo: Si cadena = "Este es un test", el resultado debería ser 4.
+	if (cadena == null || cadena.trim().isEmpty()) {  //Se usan .trim y .isEmpty para eliminar los espacios entre las palabras
+        	return 0;
+    	}
+
+    	int contador = 0;
+    	boolean enPalabra = false;
         return 0;
+	// Recorrido por cadena
+	for (int i = 0; i < cadena.length(); i++) {
+        	char caracterActual = cadena.charAt(i);
+		if (caracterActual != ' ' && caracterActual != '\t' && caracterActual != '\n') {
+            		if (!enPalabra) {
+                		contador++;       // Se detectó el inicio de una nueva palabra
+                		enPalabra = true; // Cambiamos el estado a dentro de una palabra
+            		}
+        	} else {
+            		enPalabra = false;    // Se encontró un espacio, salimos de la palabra
+        	}
+    	}
+	return contador;
     }
 
     // Método que convierte una cadena a mayúsculas
