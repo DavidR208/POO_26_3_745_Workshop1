@@ -136,7 +136,6 @@ public class Workshop {
     public int encontrarElementoMayor(int[] arreglo) {
         // TODO: Implementar el método para encontrar el elemento mayor en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 5.
-        return 0;
 	if (arreglo == null || arreglo.length == 0) {
         	throw new IllegalArgumentException("El arreglo no puede ser nulo o estar vacío.");
     	}
@@ -153,7 +152,16 @@ public class Workshop {
     public int encontrarElementoMenor(int[] arreglo) {
         // TODO: Implementar el método para encontrar el elemento menor en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 1.
-        return 0;
+        if (arreglo == null || arreglo.length == 0) {
+        	throw new IllegalArgumentException("El arreglo no puede ser nulo o estar vacío.");
+    	}
+	int menor = arreglo[0];
+	for (int i = 1; i < arreglo.length; i++) {
+        	if (arreglo[i] < menor) {
+            		menor = arreglo[i]; // Se registra nuevo numero mayor
+        	}
+    	}
+	return menor;
     }
 
     // Método que busca un elemento en un arreglo
