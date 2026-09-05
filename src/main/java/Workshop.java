@@ -56,9 +56,9 @@ public class Workshop {
 
     // Método que verifica si un número es primo
     public boolean esPrimo(int numero) {
-    // TODO: Implementar el método para verificar si un número es primo.
-    // Ejemplo: Si numero = 7, el resultado debería ser true.
-    //Los numeros negativos no son primos
+    	// TODO: Implementar el método para verificar si un número es primo.
+    	// Ejemplo: Si numero = 7, el resultado debería ser true.
+    	//Los numeros negativos no son primos
 	if (numero <= 1) {
         	return false;
         }
@@ -106,7 +106,15 @@ public class Workshop {
     public int sumaElementos(int[] arreglo) {
         // TODO: Implementar el método para sumar todos los elementos de un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 15.
-        return 0;
+        // Validacion de seguridad
+	if (arreglo == null) {
+        	return 0;
+	}
+	int suma = 0;
+	for (int numero : arreglo) {
+        	suma += numero;
+    	}
+	return suma;
     }
 
     // Método que calcula el promedio de los elementos de un arreglo
