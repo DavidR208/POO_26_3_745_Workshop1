@@ -416,14 +416,30 @@ public class Workshop {
     public String reemplazarSubcadena(String cadena, String antiguaSubcadena, String nuevaSubcadena) {
         // TODO: Implementar el método para reemplazar una subcadena en una cadena por otra subcadena.
         // Ejemplo: Si cadena = "Hello Java", antiguaSubcadena = "Java", y nuevaSubcadena = "world", el resultado debería ser "Hello world".
-        return "";
+	if (cadena == null) {
+        	return "";
+    	}
+	// Si la cadena que buscamos esta vacia o nula hacemos que devuelva la cadena intacta
+	if (antiguaSubcadena == null || antiguaSubcadena.isEmpty()) {
+        	return cadena;
+    	}
+	// Por si la nueva cadena es nula
+	if (nuevaSubcadena == null) {
+        	nuevaSubcadena = "";
+    	}
+	//Realizar cambio
+        return cadena.replace(antiguaSubcadena, nuevaSubcadena);
     }
 
     // Método que busca una subcadena en una cadena y retorna su índice
     public int buscarSubcadena(String cadena, String subcadena) {
         // TODO: Implementar el método para buscar una subcadena en una cadena y retornar su índice.
         // Ejemplo: Si cadena = "Hello world" y subcadena = "world", el resultado debería ser 6.
-        return -1;
+	// En caso de ser nulos devolver -1
+	if (cadena == null || subcadena == null) {
+        	return -1;
+    	}
+        return cadena.indexOf(subcadena);
     }
 
     // Método que valida un correo electrónico
