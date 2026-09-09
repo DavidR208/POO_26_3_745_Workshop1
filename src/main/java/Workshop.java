@@ -446,7 +446,29 @@ public class Workshop {
     public boolean validarCorreoElectronico(String correo) {
         // TODO: Implementar el método para validar un correo electrónico.
         // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
-        return false;
+	if (correo == null || correo.isEmpty()) {
+        	return false;
+    	}
+	//Encontar el pimer y ultimo "@" para confrimar que no haya mas y solo haya uno.
+	int posicionArroba = correo.indexOf('@');
+    	int ultimoArroba = correo.lastIndexOf('@');
+	if (posicionArroba == -1 || posicionArroba != ultimoArroba) {
+        	return false; // En teoria tienen que ser la misma posicion la primera y ultima.
+	}
+	//Tiene que exisitir texto antes de"@" ára que sea valido un correo.
+	if (posicionArroba == 0) {
+        	return false;
+    	}
+	//Buscamos la posicion del punto sea despues del "@" y que exista texto entre ellos.
+	int posicionPunto = correo.indexOf('.', posicionArroba);
+	if (posicionPunto <= posicionArroba + 1) {
+        	return false;
+    	}
+	// Por ultimo que el "." no sea el ultimo caracter del texto de la cadena
+	if (posicionPunto == correo.length() - 1) {
+        	return false;
+    	}
+        return true;
     }
 
     // Método que calcula el promedio de una lista de números
