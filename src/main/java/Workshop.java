@@ -535,11 +535,56 @@ public class Workshop {
         // - Tijera vence a Papel y Lagarto
         // - Lagarto vence a Spock y Papel
         // - Spock vence a Tijera y Piedra
+	if (eleccionUsuario == null || eleccionUsuario.isEmpty()) {
+        	return "Elección inválida";
+    	}
+	// Entrada a minúsculas o capitalizada
+   	String usuario = eleccionUsuario.toLowerCase().trim();
 
+	//Opciones
+	String[] opciones = {"piedra", "papel", "tijera", "lagarto", "spock"};
+	//Dar opcion valida
+	boolean opcionValida = false;
+    	for (String op : opciones) {
+        	if (op.equals(usuario)) {
+            		opcionValida = true;
+            		break;
+        	}
+    	}
+    	if (!opcionValida) {
+        return "Elección inválida";
+    	}
+	
+	//Generar opcion al azar
+	int indicePC = (int) (Math.random() * 5);
+    	String pc = opciones[indicePC];
 
-        // El método debe retornar un mensaje indicando el resultado del juego.
+    	// Mismo elemento -> Empate
+    	if (usuario.equals(pc)) {
+        	return "Empate (ambos eligieron " + pc + ")";
+    	}
+	// El método debe retornar un mensaje indicando el resultado del juego.
         // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
-        return "";
+	//Usuario gano
+	boolean ganaUsuario = false;
+
+    	if (usuario.equals("piedra") && (pc.equals("tijera") || pc.equals("lagarto"))) {
+        	ganaUsuario = true;
+    	} else if (usuario.equals("papel") && (pc.equals("piedra") || pc.equals("spock"))) {
+        	ganaUsuario = true;
+    	} else if (usuario.equals("tijera") && (pc.equals("papel") || pc.equals("lagarto"))) {
+        	ganaUsuario = true;
+    	} else if (usuario.equals("lagarto") && (pc.equals("spock") || pc.equals("papel"))) {
+        	ganaUsuario = true;
+    	} else if (usuario.equals("spock") && (pc.equals("tijera") || pc.equals("piedra"))) {
+        	ganaUsuario = true;
+    	}
+
+    	if (ganaUsuario) {
+        	return "Ganaste (Computadora eligió " + pc + ")";
+    	} else {
+        	return "Perdiste (Computadora eligió " + pc + ")";
+    	}
     }
 
     public String pptls2(String game[]) {
