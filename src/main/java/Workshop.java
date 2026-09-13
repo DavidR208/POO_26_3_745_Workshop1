@@ -587,30 +587,13 @@ public class Workshop {
     	}
     }
 
-    public String pptls2(String game[]) {
-        //Retornar player ganador o empate
-            /*
-            Rock = R
-            Paper = P
-            Scissors = S
-            Lizard = L
-            Spock = V
-        Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-Rock crushes Scissors
-         */
-        return "";
-    }
-
     public double areaCirculo(double radio) {
-        return 0.0;
+	//En el caso de que se ponga un radio negativo
+        if (radio < 0) {
+        	return 0.0;
+    	}
+	// Se usa la formula general del area del circulo y para mayor esactitud se usa el math.PI para mayor cantidad de digitos de pi
+	return Math.PI * radio * radio;
     }
 
     public String zoodiac(int day, int month) {
